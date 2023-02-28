@@ -20,7 +20,7 @@ function checkIsGameEnd(map) {
   });
 };
 
-class Board {
+export class Board {
   static instance;
   map = getClearMap();
   steps = [];
