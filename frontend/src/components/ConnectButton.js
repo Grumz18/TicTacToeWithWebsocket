@@ -1,7 +1,7 @@
 import { useWS } from "../use/ws";
 
 
-function ConnectButton() {
+export function ConnectButton() {
   const {ws, isWS} = useWS();
 
   function handleClick() {
@@ -12,5 +12,3 @@ function ConnectButton() {
     <button onClick={handleClick} disabled={isWS}>Connect</button>
   )
 }
-
-export default ConnectButton;

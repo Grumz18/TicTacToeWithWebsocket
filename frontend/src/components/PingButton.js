@@ -1,7 +1,7 @@
 import { useWS } from "../use/ws";
 
 
-function PingButton() {
+export function PingButton() {
   const {ws, isWS} = useWS();
 
   function handleClick() {
@@ -9,8 +9,6 @@ function PingButton() {
   }
 
   return(
-    <button onClick={handleClick} disabled={isWS}>Ping</button>
+    <button onClick={handleClick} disabled={!isWS}>Ping</button>
   )
 }
-
-export default PingButton;

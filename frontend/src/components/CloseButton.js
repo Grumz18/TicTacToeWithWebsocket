@@ -1,7 +1,7 @@
 import { useWS } from '../use/ws';
 
 
-function CloseButton() {
+export function CloseButton() {
   const {ws, isWS} = useWS();
 
   function handleClick() {
@@ -12,5 +12,3 @@ function CloseButton() {
     <button onClick={handleClick} disabled={!isWS}>Close</button>
   )
 }
-
-export default CloseButton;

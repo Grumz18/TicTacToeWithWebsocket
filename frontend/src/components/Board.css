@@ -1,0 +1,30 @@
+.box {
+  color: #000;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clear {
+  width: 20px;
+  height: 10px;
+}
+.board {
+  background-color: #a3a3a3;
+  width: 100px;
+  height: 100px;
+}
+.map {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  list-style: none;
+  width: min-content;
+}
+.cell {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: #ff0000;
+}

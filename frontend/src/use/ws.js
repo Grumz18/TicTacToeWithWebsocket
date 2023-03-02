@@ -3,7 +3,7 @@ import {WS} from '../api/ws';
 import { useInterval } from './interval';
 
 export function useWS() {
-  const [ws,setWS] = useState(null);
+  const [ws, setWS] = useState(null);
   const [isWS, setIsWS] = useState(null);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export function useWS() {
       return;
     }
     setWS(WS.getInstance());
-  }, []);
+  },[]);
 
   useInterval(() => {
     if(ws && isWS !== ws.isWsReady) {

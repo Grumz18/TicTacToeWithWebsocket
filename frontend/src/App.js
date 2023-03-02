@@ -1,16 +1,20 @@
-import CloseButton from "./components/CloseButton";
-import ConnectButton from "./components/ConnectButton";
-import PingButton from "./components/PingButton";
-
+import { Board } from "./components/Board";
+import { CloseButton } from "./components/CloseButton";
+import { ConnectButton } from "./components/ConnectButton";
+import { PingButton } from "./components/PingButton";
 
 function App() {
-
   return (
-  <>
-    <ConnectButton />
-    <PingButton />
-    <CloseButton />
-  </>
+    <>
+      <div>
+        <ConnectButton />
+        <PingButton />
+        <CloseButton />
+      </div>
+      <div>
+        <Board />
+      </div>
+    </>
   );
 }
 
