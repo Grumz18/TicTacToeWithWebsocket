@@ -15,7 +15,7 @@ const WIN_COMBINATION = [
 
 function checkIsGameEnd(map) {
   return WIN_COMBINATION.some(combination => {
-     return combination.every(position => map[position] === 'X') ||
+    return combination.every(position => map[position] === 'X') ||
     combination.every(position => map[position] === 'O')
   });
 };
@@ -65,20 +65,18 @@ export class Board {
   }
 
   step(stepData) {
-    //проверка что ход последователен среди всех ходов
-    const isProgrssion = this.steps.length > 0 && this.steps.slice(-1)[0].id === stepData.prevStepId;
+    const isProgression = this.steps.length > 0 && this.steps.slice(-1)[0].id === stepData.prevStepId;
     const isFieldCorrect = stepData.field >= 0 && stepData.field <= 8 && this.map[stepData.field] === 'None';
     const isGameStatusCorrect = this.status === 'game';
 
-    if(isProgrssion && isFieldCorrect, isGameStatusCorrect) {
-
+    if(isProgression && isFieldCorrect && isGameStatusCorrect) {
       const step = {
         id: this.steps.length,
         prevStepId: this.steps.length -1,
         field: stepData.field
       };
 
-      const fieldData = this.steps.length%2 === 1 ? 'O' : 'X';
+      const fieldData = this.steps.length%2 === 1 ? 'X' : 'O';
 
       this.steps = [...this.steps, step];
       this.map = [...this.map.slice(0, stepData.field), fieldData, ...this.map.slice(stepData.field +1)];

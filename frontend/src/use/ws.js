@@ -4,7 +4,7 @@ import { useInterval } from './interval';
 
 export function useWS() {
   const [ws, setWS] = useState(null);
-  const [isWS, setIsWS] = useState(null);
+  const [isWS, setisWS] = useState(null);
 
   useEffect(() => {
     if(ws) {
@@ -14,10 +14,9 @@ export function useWS() {
   },[]);
 
   useInterval(() => {
-    if(ws && isWS !== ws.isWsReady) {
-      setIsWS(ws.isWsReady);
+    if(ws && isWS !== ws.isWSReady) {
+      setisWS(ws.isWSReady);
     }
   }, 5);
-
-  return {ws, isWS}
+  return {ws, isWS};
 };
