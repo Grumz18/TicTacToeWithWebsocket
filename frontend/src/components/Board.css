@@ -1,31 +1,85 @@
-.box {
-  color: #000;
-  margin-top: 1rem;
+* {
+  padding: 0;
+  margin: 0;
 }
-.controls {
+.box {
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column-reverse;
 }
 .clear {
-  width: 20px;
-  height: 10px;
+  padding: 10px 35px;
+  margin-top: 10px;
+  background-color: #a4a6be;
+  border:1px solid #d4d5f5;
+  border-radius: 5px;
+  color: #2c2d52;
+}
+.clear:hover {
+  background-color: #c1c3dd;
+  border:1px solid #eff0ff;
+  box-shadow: 0 0 10px #8285d6, 0 0 10px #212361;
+  color: #1c1d3b;
+  cursor: pointer;
 }
 .board {
-  background-color: #a3a3a3;
-  width: 100px;
-  height: 100px;
+  background-color: #a4a6be;
+  border:1px solid #d4d5f5;
+  box-shadow: 0 0 10px #8285d6;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 }
 .map {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 1rem;
   list-style: none;
-  width: min-content;
 }
 .cell {
   display: block;
-  width: 40px;
-  height: 40px;
-  background-color: #ff0000;
+  width: 80px;
+  height: 80px;
+  background-color: #F5E9CF;
+  border-radius: 10px;
+}
+.btn-cell {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  appearance: none;
+  border: 1px solid rgb(112, 112, 112);
+  border-radius: 10px;
+  background: none;
+  width: 80px;
+  height: 80px;
+  box-shadow: 0 0 5px black;
+  cursor: pointer;
+}
+.btn-cell:hover {
+  border: 2px solid #7DB9B6;
+  box-shadow: 0 0 10px #155a57;
+  cursor: pointer;
+  height: 82px;
+}
+
+.field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: none;
+  height: 100%;
+  box-shadow: 0 0 5px black;
+}
+.field:hover {
+  border: 1px solid #E96479;
+  box-shadow: 0 0 10px #740e1d;
+  cursor:not-allowed;
 }

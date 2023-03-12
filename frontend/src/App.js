@@ -6,7 +6,7 @@ import { PingButton } from "./components/PingButton";
 function App() {
   return (
     <>
-      <div>
+      <div className="server_controls">
         <ConnectButton />
         <PingButton />
         <CloseButton />

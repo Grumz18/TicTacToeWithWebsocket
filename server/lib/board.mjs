@@ -1,9 +1,9 @@
 
 function getClearMap() {
   return [
-    'None', 'None', 'None',
-    'None', 'None', 'None',
-    'None', 'None', 'None'
+    '', '', '',
+    '', '', '',
+    '', '', ''
   ];
 }
 
@@ -47,7 +47,7 @@ export class Board {
 
   firstStep(stepData) {
     const isFieldCorrect = stepData.field >= 0 && stepData.field <= 8;
-    const isMapEmpty = this.map.every(f => f === 'None');
+    const isMapEmpty = this.map.every(f => f === '');
     const isStepsLengthZero = this.steps.length === 0;
 
     if(isStepsLengthZero && isMapEmpty && isFieldCorrect) {
@@ -66,7 +66,7 @@ export class Board {
 
   step(stepData) {
     const isProgression = this.steps.length > 0 && this.steps.slice(-1)[0].id === stepData.prevStepId;
-    const isFieldCorrect = stepData.field >= 0 && stepData.field <= 8 && this.map[stepData.field] === 'None';
+    const isFieldCorrect = stepData.field >= 0 && stepData.field <= 8 && this.map[stepData.field] === '';
     const isGameStatusCorrect = this.status === 'game';
 
     if(isProgression && isFieldCorrect && isGameStatusCorrect) {
