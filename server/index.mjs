@@ -2,7 +2,7 @@ import { createServer } from 'http';
 import { createServer as createSocketServer } from 'sockjs';
 import { Board } from './lib/board.mjs';
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const httpServer = createServer();
 const socketServer = createSocketServer();
 
@@ -43,7 +43,9 @@ socketServer.on('connection', connection => {
 });
 
 socketServer.installHandlers(httpServer);
-httpServer.listen(PORT);
+httpServer.listen(PORT, () => {
+  console.log(`Server started on PORT: ${PORT}`);
+});
 
 function handlePing(connection) {
   connection.write(JSON.stringify({ type: 'pong' }));
